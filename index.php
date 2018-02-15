@@ -1,28 +1,23 @@
 <?php get_header(); ?>
-
    
-   <section id="breadcrumb-area">
+<section id="breadcrumb-area">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="breadcrumb-title text-center">
-                    	<h1>blog</h1>
-						<a href="index.html">Home</a> <i class="fa fa-angle-right"></i> <span>blog</span>
+                    	
+						<?php if(function_exists('mj_wp_breadcrumb'))mj_wp_breadcrumb(); ?>
 					</div> <!-- /.page-breadcumb -->
 				</div>
 			</div>
 		</div>
-	</section>
+	</section> <!-- /#page-title --> 
     
-   
-    <div class="blog_page_area">
-        <div class="container">
-            <div class="row">
-			
-			
-                <div class="col-md-8">
-				
-                    <div class="blog_left_side_area">
+   <div id="gardener-blogs-content">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 pull-left">
+                        <div class="gardener-blog-posts"> 
 
                     	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
@@ -43,9 +38,13 @@
                     	?>                                      
 
                       
-                        <div class="blog_pagination">
-                            <nav>
-                                <ul class="pagination pagination-lg">
+                        <div id="gardener-pagination">
+							<div class="row signle-pagination center-block"> 
+								<nav>
+                                <ul class="pagination">
+                                    <li>
+                                        
+                                    </li>
 
                                     <?php the_posts_pagination( array(
                                         'mid_size' => 2,
@@ -53,8 +52,10 @@
                                         'next_text' => __( '<i class="flaticon-right-arrow"></i>', 'textdomain' ),
                                     ) ); ?>
                                     
+                                    
                                 </ul>
                             </nav>
+                            </div>
                         </div>
 						<?php
 							else:
@@ -70,8 +71,8 @@
                 </div><!-- col-md-8 -->
 				
 				
-                <div class="col-md-4">
-                    <div class="blog_right_side_area">                        
+				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 pull-right "> 
+					<div class="gardener-blog-sidebar">                        
                         <?php echo dynamic_sidebar('right_sidebar'); ?>               
                     </div>
                 </div><!-- col-md-4 -->
