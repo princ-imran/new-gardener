@@ -21,15 +21,23 @@
 
                     	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
-						<div class="blog_left_single_item">
-                            <div class="blog_pic image_fulwidth">
-                                <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
-                                <h4 class="date_position"><?php echo get_the_date('F j Y'); ?></h4>
-                            </div>
+						<div class="single-blog-post">
+                            <figure>
+                                <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>                                
+                            </figure>
 
-                            <div class="blog_left_single_content para_default">
-                                <h3><a href="<?php the_permalink(); ?>"><?php echo get_the_title(); ?></a></h3>
-                                <p><?php echo wp_trim_words( get_the_content(), 40, '...' ); ?></p>
+                            <div class="post-title">
+                                <h1><a href="<?php the_permalink(); ?>"><?php echo get_the_title(); ?></a></h1>                               
+                            </div>
+                             <div class="post-info">
+                                <ul class="post-icons">
+                                    <li><i class="fa fa-user"></i><a href="<?php echo get_author_posts_url(get_the_author_meta('ID'),get_the_author_meta('user_nicename'));?>" class="admin"><?php the_author();?></a></li>
+                                    <li><i class="fa fa-comment"></i><a href="<?php wp_count_comments( post_id ); ?>">Comments</a></li>
+                                    <li><i class="fa fa-heart"></i><a href="">Like</a></li>
+                                </ul>
+                            </div>
+                            <div class="post-content">
+                                 <p><?php echo wp_trim_words( get_the_content(), 40, '...' ); ?></p>
                             </div>
                         </div><!-- blog_left_single_item -->
 

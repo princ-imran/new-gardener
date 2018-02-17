@@ -33,7 +33,7 @@
                             <div class="post-info">
                                 <ul class="post-icons">
                                     <li><i class="fa fa-user"></i><a href="<?php echo get_author_posts_url(get_the_author_meta('ID'),get_the_author_meta('user_nicename'));?>" class="admin"><?php the_author();?></a></li>
-                                    <li><i class="fa fa-comment"></i><a href="">Comments</a></li>
+                                    <li><i class="fa fa-comment"></i> <?php echo comments_number( esc_html__( 'no comments', 'madang' ), esc_html__( 'one comment', 'madang' ), '% ' . esc_html__( 'comments', 'madang' ) ); ?><a href=""></a></li>
                                     <li><i class="fa fa-heart"></i><a href="">Like</a></li>
                                 </ul>
                             </div>

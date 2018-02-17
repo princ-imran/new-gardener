@@ -20,9 +20,11 @@ require_once(get_template_directory().'/inc/custom-widgets.php');
 //Custom widgets function
 require_once(get_template_directory().'/inc/breadcrumb.php');
 
+//Custom Custom Comment function
+require_once(get_template_directory().'/inc/custom-comments.php');
+
+
 /*
-
-
 
 //Theme Drop-Down menu function
 require_once(get_template_directory().'/inc/custom-slider.php');

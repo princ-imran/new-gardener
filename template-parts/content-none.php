@@ -8,7 +8,7 @@
                         <h3>Sorry! The Page Not Found</h3>
                         <p>The page you were looking for could not be found.</p>
                         <div class="send_me_ph">
-                            <a href="index-01.html" class="submit_btn_quick_contact">Back To Home</a>
+                            <a href="<?php echo get_home_url(); ?>" class="submit_btn_quick_contact">Back To Home</a>
                         </div>
                     </div>
                 </div>
